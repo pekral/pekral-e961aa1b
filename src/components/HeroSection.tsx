@@ -1,6 +1,8 @@
 import { Terminal, TerminalLine } from './Terminal';
 import { SocialLinks } from './SocialLinks';
 import { MapPin, Building } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
+import profilePhoto from '@/assets/profile-photo.jpg';
 
 export const HeroSection = () => {
   return (
@@ -12,13 +14,19 @@ export const HeroSection = () => {
               command="cat about.txt"
               output={
                 <div className="space-y-4">
-                  <div>
-                    <h1 className="text-2xl md:text-3xl font-bold text-foreground">
-                      Petr Král
-                    </h1>
-                    <p className="text-primary font-mono text-lg mt-1 glow-text">
-                      PHP Developer
-                    </p>
+                  <div className="flex items-start gap-4">
+                    <Avatar className="w-20 h-20 md:w-24 md:h-24 border-2 border-primary glow-border">
+                      <AvatarImage src={profilePhoto} alt="Petr Král" />
+                      <AvatarFallback className="bg-primary/20 text-primary text-2xl">PK</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+                        Petr Král
+                      </h1>
+                      <p className="text-primary font-mono text-lg mt-1 glow-text">
+                        PHP Developer
+                      </p>
+                    </div>
                   </div>
                   
                   <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">

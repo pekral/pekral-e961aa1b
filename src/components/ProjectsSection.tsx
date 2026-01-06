@@ -1,11 +1,10 @@
-import { ExternalLink, Star, GitBranch } from 'lucide-react';
+import { ExternalLink, GitBranch } from 'lucide-react';
 
 interface Project {
   name: string;
   description: string;
   url: string;
   language: string;
-  stars?: number;
 }
 
 const projects: Project[] = [
@@ -14,7 +13,6 @@ const projects: Project[] = [
     description: 'Custom Rector rules for automated code refactoring and PHP upgrades.',
     url: 'https://github.com/pekral/rector-rules',
     language: 'PHP',
-    stars: 2,
   },
   {
     name: 'arch-app-services',
@@ -81,12 +79,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
         
         <div className="flex items-center gap-3 text-xs text-muted-foreground shrink-0">
-          {project.stars && project.stars > 0 && (
-            <span className="flex items-center gap-1">
-              <Star className="w-3 h-3" />
-              {project.stars}
-            </span>
-          )}
           <span className="px-2 py-0.5 rounded bg-secondary font-mono">
             {project.language}
           </span>

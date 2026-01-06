@@ -37,7 +37,6 @@ export const TerminalLine = ({ prompt = "$", command, output }: TerminalLineProp
         <div className="flex items-center gap-2">
           <span className="terminal-prompt">{prompt}</span>
           <span className="terminal-command">{command}</span>
-          <span className="animate-blink text-primary">▌</span>
         </div>
       )}
       {output && <div className="terminal-output ml-4 mt-2">{output}</div>}
